@@ -39,7 +39,8 @@ public class CameraPropertiesImpl implements CameraProperties {
   @NonNull
   @Override
   public Range<Integer>[] getControlAutoExposureAvailableTargetFpsRanges() {
-    return cameraCharacteristics.get(CameraCharacteristics.CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES);
+    return [new Range<>(60, 60)];
+    //return cameraCharacteristics.get(CameraCharacteristics.CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES);
   }
 
   @NonNull
