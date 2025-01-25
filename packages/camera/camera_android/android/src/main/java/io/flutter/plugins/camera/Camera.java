@@ -189,7 +189,7 @@ class Camera
         @Nullable Integer audioBitrate) {
       this.resolutionPreset = resolutionPreset;
       this.enableAudio = enableAudio;
-      this.fps = fps;
+      this.fps = 60;
       this.videoBitrate = videoBitrate;
       this.audioBitrate = audioBitrate;
     }
@@ -241,7 +241,7 @@ class Camera
         recordingFps = null != camcorderProfile ? camcorderProfile.videoFrameRate : null;
       }
     }
-
+    recordingFps = 60;
     if (recordingFps != null && recordingFps.intValue() > 0) {
 
       final FpsRangeFeature fpsRange = new FpsRangeFeature(cameraProperties);
@@ -250,7 +250,7 @@ class Camera
     }
 
     // Create capture callback.
-    captureTimeouts = new CaptureTimeoutsWrapper(3000, 3000);
+    captureTimeouts = new CaptureTimeoutsWrapper(1500, 1500);
     captureProps = new CameraCaptureProperties();
     cameraCaptureCallback = CameraCaptureCallback.create(this, captureTimeouts, captureProps);
 

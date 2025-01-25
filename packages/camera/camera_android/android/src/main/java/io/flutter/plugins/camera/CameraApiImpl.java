@@ -65,7 +65,7 @@ final class CameraApiImpl implements Messages.CameraApi {
             new Messages.CameraEventApi(messenger, String.valueOf(cameraId)));
     CameraProperties cameraProperties =
         new CameraPropertiesImpl(cameraName, CameraUtils.getCameraManager(activity));
-    Integer fps = (settings.getFps() == null) ? null : settings.getFps().intValue();
+    Integer fps = 60;
     Integer videoBitrate =
         (settings.getVideoBitrate() == null) ? null : settings.getVideoBitrate().intValue();
     Integer audioBitrate =
