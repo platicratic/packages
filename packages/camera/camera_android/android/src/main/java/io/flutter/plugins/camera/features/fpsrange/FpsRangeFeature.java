@@ -29,7 +29,9 @@ public class FpsRangeFeature extends CameraFeature<Range<Integer>> {
   public FpsRangeFeature(@NonNull CameraProperties cameraProperties) {
     super(cameraProperties);
 
-    if (isPixel4A()) {
+    currentSetting = new Range<>(60, 60);
+
+    /* if (isPixel4A()) {
       // HACK: There is a bug in the Pixel 4A where it cannot support 60fps modes
       // even though they are reported as supported by
       // `getControlAutoExposureAvailableTargetFpsRanges`.
@@ -51,7 +53,7 @@ public class FpsRangeFeature extends CameraFeature<Range<Integer>> {
           }
         }
       }
-    }
+    }*/
   }
 
   private boolean isPixel4A() {
